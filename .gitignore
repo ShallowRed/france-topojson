@@ -1,0 +1,63 @@
+# Dependencies
+# node_modules contient toutes les dépendances npm (Mapshaper, 7zip, etc.)
+node_modules/
+package-lock.json
+yarn.lock
+pnpm-lock.yaml
+
+# Data directories
+# Ces dossiers contiennent les fichiers générés (peuvent être très volumineux)
+# Ne pas versionner : peuvent être régénérés avec npm run build
+
+# Archives et Shapefiles téléchargés depuis l'IGN (plusieurs centaines de MB)
+data/sources/
+
+# Fichiers GeoJSON intermédiaires (taille moyenne)
+data/geojson/
+
+# Fichiers TopoJSON finaux (optimisés mais toujours volumineux)
+data/topojson/
+
+# Si vous voulez versionner uniquement les fichiers légers :
+# !data/topojson/*-light.json
+
+# Build artifacts
+dist/
+build/
+
+# Logs et debug
+*.log
+npm-debug.log*
+yarn-debug.log*
+yarn-error.log*
+pnpm-debug.log*
+
+# OS-specific files
+.DS_Store          # macOS
+Thumbs.db          # Windows
+Desktop.ini        # Windows
+
+# IDE and editor files
+.vscode/           # Visual Studio Code
+.idea/             # JetBrains IDEs
+*.swp              # Vim
+*.swo              # Vim
+*.sublime-*        # Sublime Text
+.project           # Eclipse
+.settings/         # Eclipse
+
+# Temporary files
+tmp/
+temp/
+*.tmp
+*.bak
+*.backup
+
+# Environment variables
+.env
+.env.local
+.env.*.local
+
+# Test coverage
+coverage/
+.nyc_output/

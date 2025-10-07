@@ -1,0 +1,92 @@
+{
+  "layers": [
+    {
+      "name": "regions",
+  "label": "Régions",
+      "source": {
+        "urls": [
+          "https://data.geopf.fr/telechargement/download/ADMIN-EXPRESS-COG-CARTO/ADMIN-EXPRESS-COG-CARTO_3-2__SHP_WGS84G_FRA_2024-02-22/ADMIN-EXPRESS-COG-CARTO_3-2__SHP_WGS84G_FRA_2024-02-22.7z"
+        ],
+        "fileName": "ADMIN-EXPRESS-COG-CARTO_3-2__SHP_WGS84G_FRA_2024-02-22.7z",
+        "shapefile": "REGION.shp",
+        "archive": true
+      },
+      "simplifications": [
+        { "level": 2, "suffix": "-light", "description": "Version legere - fichiers optimises", "precision": 0.0001, "properties": ["INSEE_REG"] }
+      ],
+      "precision": 0.00001,
+      "projection": "wgs84",
+      "properties": ["NOM", "INSEE_REG"],
+      "enabled": true
+    },
+    {
+      "name": "departements",
+  "label": "Départements",
+      "source": {
+        "urls": [
+          "https://data.geopf.fr/telechargement/download/ADMIN-EXPRESS-COG-CARTO/ADMIN-EXPRESS-COG-CARTO_3-2__SHP_WGS84G_FRA_2024-02-22/ADMIN-EXPRESS-COG-CARTO_3-2__SHP_WGS84G_FRA_2024-02-22.7z"
+        ],
+        "fileName": "ADMIN-EXPRESS-COG-CARTO_3-2__SHP_WGS84G_FRA_2024-02-22.7z",
+        "shapefile": "DEPARTEMENT.shp",
+        "archive": true
+      },
+      "simplifications": [
+        { "level": 2, "suffix": "-light", "description": "Version legere", "precision": 0.0001, "properties": ["INSEE_DEP", "INSEE_REG"] }
+      ],
+      "precision": 0.00001,
+      "projection": "wgs84",
+      "properties": ["NOM", "INSEE_DEP", "INSEE_REG"],
+      "enabled": true
+    },
+    {
+      "name": "epci",
+  "label": "EPCI",
+      "source": {
+        "urls": [
+          "https://data.geopf.fr/telechargement/download/ADMIN-EXPRESS-COG-CARTO/ADMIN-EXPRESS-COG-CARTO_3-2__SHP_WGS84G_FRA_2024-02-22/ADMIN-EXPRESS-COG-CARTO_3-2__SHP_WGS84G_FRA_2024-02-22.7z"
+        ],
+        "fileName": "ADMIN-EXPRESS-COG-CARTO_3-2__SHP_WGS84G_FRA_2024-02-22.7z",
+        "shapefile": "EPCI.shp",
+        "archive": true
+      },
+      "simplifications": [
+        { "level": 2, "suffix": "-light", "description": "Version legere", "precision": 0.0001, "properties": ["CODE_SIREN"] }
+      ],
+      "precision": 0.00001,
+      "projection": "wgs84",
+      "properties": ["NOM", "CODE_SIREN", "NATURE"],
+      "enabled": true
+    },
+    {
+      "name": "communes",
+      "label": "Communes",
+      "source": {
+        "urls": [
+          "https://data.geopf.fr/telechargement/download/ADMIN-EXPRESS-COG-CARTO/ADMIN-EXPRESS-COG-CARTO_3-2__SHP_WGS84G_FRA_2024-02-22/ADMIN-EXPRESS-COG-CARTO_3-2__SHP_WGS84G_FRA_2024-02-22.7z"
+        ],
+        "fileName": "ADMIN-EXPRESS-COG-CARTO_3-2__SHP_WGS84G_FRA_2024-02-22.7z",
+        "shapefile": "COMMUNE.shp",
+        "archive": true
+      },
+      "simplifications": [
+        { "level": 2, "suffix": "-light", "description": "Version légère", "precision": 0.0001, "properties": ["INSEE_COM", "INSEE_DEP", "INSEE_REG"] }
+      ],
+      "precision": 0.00001,
+      "projection": "wgs84",
+      "properties": ["NOM", "INSEE_COM", "SIREN_EPCI", "INSEE_DEP", "INSEE_REG", "POPULATION"],
+      "enabled": true,
+      "note": "Désactivé par défaut car fichier très volumineux"
+    }
+  ],
+  "options": {
+    "keepShapes": true,
+    "snap": true,
+    "method": "weighted",
+    "outputFormat": "topojson"
+  },
+  "directories": {
+    "sources": "data/sources",
+    "geojson": "data/geojson",
+    "topojson": "data/topojson"
+  }
+}
